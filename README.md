@@ -4,7 +4,7 @@
 
 ### Scenario
 
-The server team has noticed a significant network performance degradation on some of their older devices attached to the network in the 10.0.0.0/16 network. After ruling out external DDoS attacks, the security team suspects something might be going on internally.
+The server team has noticed a significant network performance degradation on some of their older devices attached to the network in the **10.0.0.0/16** network. After ruling out external DDoS attacks, the security team suspects something might be going on internally.
 
 **Description:**
 
@@ -52,7 +52,7 @@ Findings: The query returned multiple failed connection attempts from **cybercla
 
 ---
 
-### **Process Activity Analysis**
+### **Connection Failure Review**
 
 Analyzed failed connection requests from suspected host **10.3.0.50** by querying network logs and ordering results by timestamp to reveal connection patterns.
 
@@ -71,22 +71,24 @@ Findings: The sequential order of the ports confirmed that several port scans we
 
 ---
 
-### **Network Exfiltration Path Review**
+### **Network Forensics**
 
-I analyzed network events within five minutes before and after the identified incident to check for any outbound connections that would indicate data exfiltration.
+Reviewed network events five minutes before and after the incident to identify any outbound connections indicative of data exfiltration.
 
 ```kql
-let SuspiciousVM = "cyberclaw-vm";
-let SpecificTime = datetime(2026-04-24T14:41:55.3369801Z);
-DeviceNetworkEvents
-| where Timestamp between ((SpecificTime - 5m) .. (SpecificTime + 5m))
-| where DeviceName == SuspiciousVM
+let VMName = "cyberclaw-vm";
+let specificTime = datetime(2026-04-22T00:06:57.8028463Z);
+DeviceProcessEvents
+| where Timestamp between ((specificTime - 10m) .. (specificTime + 10m))
+| where DeviceName == VMName
 | order by Timestamp desc
+| project Timestamp, FileName, InitiatingProcessCommandLine, AccountName
 ```
 
-<img alt="Image" src="https://github.com/user-attachments/assets/202ddba1-0d22-4b09-88c3-62bb51d341ed" />
+<img alt="Image" src="https://github.com/user-attachments/assets/68c7cf18-4234-4ba8-89a8-a3439880c789" />
 <br><br>
-Findings: No outbound connections to external IP addresses, cloud storage domains, or unauthorized destinations were observed.
+
+Findings: A PowerShell script named `portscan.ps1` was launched by the **br00klyn** account at `2026-04-22T00:06:57.8028463Z.`
 
 #### `Timestamp captured: 2026-04-22T00:06:57.8028463Z`
 ---
