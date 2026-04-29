@@ -50,28 +50,24 @@ DeviceNetworkEvents
 
 Findings: The query returned multiple failed connection attempts from **cyberclaw-vm** to both its own IP address and neighboring hosts, indicating potential self-scanning or internal reconnaissance behavior consistent with malware or misconfiguration.
 
-#### `Timestamp captured: 2026-04-24T14:41:55.3369801Z`
-
 ---
 
 ### **Process Activity Analysis**
 
-Using the timestamp captured from the `.zip` file creation event, I queried the `DeviceProcessEvents` table for any process activity within a two-minute window to identify what may have created the archive.
+Analyzed failed connection requests from suspected host **10.3.0.50** by querying network logs and ordering results by timestamp to reveal connection patterns.
 
 ```kql
-let SuspiciousVM = "cyberclaw-vm";
-let SpecificTime = datetime(2026-04-24T14:41:55.3369801Z);
-DeviceProcessEvents
-| where Timestamp between ((SpecificTime - 2m) .. (SpecificTime + 2m))
-| where DeviceName == SuspiciousVM
-| order by Timestamp desc
-| project Timestamp, FileName, ActionType, ProcessCommandLine, InitiatingProcessCommandLine
+let SuspiciousIP = "10.3.0.50";
+DeviceNetworkEvents
+| where DeviceName == "cyberclaw-vm"
+| where ActionType == "ConnectionFailed"
+| where LocalIP == "10.3.0.50"
+| order by Timestamp
 ```
-
-<img alt="Image" src="https://github.com/user-attachments/assets/0dc81b99-941d-4e3a-87a9-06a945098338" />
+<img alt="Image" src="https://github.com/user-attachments/assets/7548d689-0e9b-4434-9c2d-3345ea427cc3" />
 <br><br>
 
-Findings: A PowerShell script quietly installed `7zip` and then used it to compress employee data.
+Findings: The sequential order of the ports confirmed that several port scans were being conducted.
 
 ---
 
@@ -92,6 +88,7 @@ DeviceNetworkEvents
 <br><br>
 Findings: No outbound connections to external IP addresses, cloud storage domains, or unauthorized destinations were observed.
 
+#### `Timestamp captured: 2026-04-22T00:06:57.8028463Z`
 ---
 
 ### **MITRE ATT&CK Mapping: Tactics, Techniques, and Procedures (TTPs)**
