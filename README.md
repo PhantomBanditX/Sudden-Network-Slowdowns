@@ -126,10 +126,12 @@ Findings:
 
 ## 5. Improvement
 
-- Block unauthorized tools (e.g., `7-Zip` via App Control)
-- Set alerts for suspicious PowerShell execution, Zip file activity, silent installs
-- Define clear isolation criteria: isolate if exfiltration is confirmed or in progress
-- Develop baseline of normal archiving behavior by department/role
+- Enable PowerShell script logging
+- Block port scan tools via App Control
+- Alert on sequential connection failures
+- Detect port scans by tracking failed connection patterns
+- Block outbound traffic from unauthorized hosts
+
 ---
 ## 🧾Summary                   
 An investigation into `cyberclaw-vm` identified an abnormal volume of failed internal connection attempts to itself and neighboring hosts. The pattern of activity was consistent with internal port scanning behavior and systematic probing of multiple systems. A PowerShell script `(portscan.ps1)` was executed by user **br00klyn** during the same timeframe as the suspicious activity. No malware was detected, but the host was isolated and scheduled for rebuild as a precaution.
