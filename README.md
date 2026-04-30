@@ -109,6 +109,9 @@ Findings: A PowerShell script named `portscan.ps1` was launched by the **br00kly
 ## Response
 
 This activity was not anticipated or authorized by administrators. The device was therefore immediately isolated, and a malware scan was initiated.
+<img alt="Image" src="https://github.com/user-attachments/assets/fec87d32-350f-4395-a52e-58dfd8e1f151" />
+<br><br>
+Findings: The malware scan returned no findings. However, as a precautionary measure, the affected device was isolated and a support ticket was raised to reimage and rebuild the system. The device remains in an isolated state.
 
 ---
 
