@@ -31,7 +31,7 @@ The server team has noticed a significant network performance degradation on som
 
 ## 2. Detection & Analysis
 
-### **File Inspection**
+### **Connection Failure Review**
 
 Identified a host **cyberclaw-vm** generating an anomalous volume of failed connection requests to itself and other systems on the same subnet.
 
@@ -52,7 +52,7 @@ Findings: The query returned multiple failed connection attempts from **cybercla
 
 ---
 
-### **Connection Failure Review**
+### **Network Forensics**
 
 Analyzed failed connection requests from suspected host **10.3.0.50** by querying network logs and ordering results by timestamp to reveal connection patterns.
 
@@ -71,7 +71,7 @@ Findings: The sequential order of the ports confirmed that several port scans we
 
 ---
 
-### **Network Forensics**
+### **Anomalous behavior**
 
 I reviewed the DeviceProcessEvents table to identify any suspicious activity occurring around the time the port scan began.
 
