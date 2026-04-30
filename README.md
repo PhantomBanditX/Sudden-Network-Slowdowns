@@ -97,13 +97,13 @@ Findings: A PowerShell script named `portscan.ps1` was launched by the **br00kly
 
 - [T1059.001 – Command and Scripting Interpreter: PowerShell](https://attack.mitre.org/techniques/T1059/001/)
 
-- [T1560.001 – Archive Collected Data: Archive via Utility](https://attack.mitre.org/techniques/T1560/001/)
+- [T1046 - Network Service Discovery](https://attack.mitre.org/techniques/T1046/)
 
-- [T1105 – Ingress Tool Transfer](https://attack.mitre.org/techniques/T1105/)
+- [T1018 - Remote System Discovery](https://attack.mitre.org/techniques/T1018/)
 
-- [T1074.001 – Data Staged: Local Data Staging](https://attack.mitre.org/techniques/T1074/001/)
+- [T1078 – Valid Accounts](https://attack.mitre.org/techniques/T1078/)
 
-- [T1564.001 — Hide Files and Directories](https://attack.mitre.org/techniques/T1564/001/)
+
 ---
 
 ## 3. Response
