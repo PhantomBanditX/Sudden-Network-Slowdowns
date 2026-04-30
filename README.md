@@ -73,7 +73,7 @@ Findings: The sequential order of the ports confirmed that several port scans we
 
 ### **Network Forensics**
 
-Reviewed network events five minutes before and after the incident to identify any outbound connections indicative of data exfiltration.
+I reviewed the DeviceProcessEvents table to identify any suspicious activity occurring around the time the port scan began.
 
 ```kql
 let VMName = "cyberclaw-vm";
