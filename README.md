@@ -1,6 +1,6 @@
 # Sudden-Network-Slowdowns
 
-## 1. Preparation
+## Preparation
 
 ### Scenario
 
