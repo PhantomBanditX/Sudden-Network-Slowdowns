@@ -1,4 +1,4 @@
-# Sudden-Network-Slowdowns
+# Sudden Network Slowdowns
 
 ## 1. Preparation
 
