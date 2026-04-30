@@ -124,7 +124,7 @@ Findings:
 - Excessive failed internal connection attempts from **cyberclaw-vm**
 - Consistent with port scanning/reconnaissance
 
-## 5. Improvement
+Improvement
 
 - Enable PowerShell script logging
 - Block port scan tools via App Control
