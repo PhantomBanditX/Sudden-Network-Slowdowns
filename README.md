@@ -108,8 +108,7 @@ Findings: A PowerShell script named `portscan.ps1` was launched by the **br00kly
 
 ## 3. Response
 
-Findings were reported to the employee's management regarding archive creation via PowerShell scripts. No conclusive evidence of data exfiltration was found, and monitoring remains active pending further management instructions.
-
+This activity was not anticipated or authorized by administrators. The device was therefore immediately isolated, and a malware scan was initiated.
 ---
 
 ## 4. Documentation
