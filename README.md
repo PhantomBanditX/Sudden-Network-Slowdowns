@@ -29,7 +29,7 @@ The server team has noticed a significant network performance degradation on som
 
 ----
 
-## 2. Detection & Analysis
+## Detection & Analysis
 
 ### **Connection Failure Review**
 
@@ -106,12 +106,13 @@ Findings: A PowerShell script named `portscan.ps1` was launched by the **br00kly
 
 ---
 
-## 3. Response
+## Response
 
 This activity was not anticipated or authorized by administrators. The device was therefore immediately isolated, and a malware scan was initiated.
+
 ---
 
-## 4. Documentation
+## Documentation
 Findings:
 
 - PowerShell script execution
