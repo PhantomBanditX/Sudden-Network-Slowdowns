@@ -132,7 +132,7 @@ Findings:
 - Develop baseline of normal archiving behavior by department/role
 ---
 ## 🧾Summary                   
-The user `cyberclaw-vm` installed `7-Zip` via PowerShell, compressed employee data into a ZIP archive, and moved it to a `backup` folder in ProgramData. No data exfiltration was detected. The behavior is consistent with data staging, so findings were escalated to management and monitoring remains active.
+An investigation into `cyberclaw-vm` identified an abnormal volume of failed internal connection attempts to itself and neighboring hosts. The pattern of activity was consistent with internal port scanning behavior and systematic probing of multiple systems. A PowerShell script `(portscan.ps1)` was executed by user **br00klyn** during the same timeframe as the suspicious activity. No malware was detected, but the host was isolated and scheduled for rebuild as a precaution.
 
 ---
 ## References
