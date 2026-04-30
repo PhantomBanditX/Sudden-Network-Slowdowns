@@ -36,7 +36,7 @@ The server team has noticed a significant network performance degradation on som
 Identified a host **cyberclaw-vm** generating an anomalous volume of failed connection requests to itself and other systems on the same subnet.
 
 Wrote a KQL query targeting **DeviceNetworkEvents** to filter for **ConnectionFailed** actions originating from the suspect host.
-
+<br><br>
 ```kql
 DeviceNetworkEvents
 | where DeviceName == "cyberclaw-vm"
@@ -55,7 +55,7 @@ Findings: The query returned multiple failed connection attempts from **cybercla
 ### **Network Forensics**
 
 Analyzed failed connection requests from suspected host **10.3.0.50** by querying network logs and ordering results by timestamp to reveal connection patterns.
-
+<br><br>
 ```kql
 let SuspiciousIP = "10.3.0.50";
 DeviceNetworkEvents
@@ -74,7 +74,7 @@ Findings: The sequential order of the ports confirmed that several port scans we
 ### **Anomalous behavior**
 
 I reviewed the DeviceProcessEvents table to identify any suspicious activity occurring around the time the port scan began.
-
+<br><br>
 ```kql
 let VMName = "cyberclaw-vm";
 let specificTime = datetime(2026-04-22T00:06:57.8028463Z);
@@ -109,6 +109,7 @@ Findings: A PowerShell script named `portscan.ps1` was launched by the **br00kly
 ## Response
 
 This activity was not anticipated or authorized by administrators. The device was therefore immediately isolated, and a malware scan was initiated.
+<br><br>
 <img alt="Image" src="https://github.com/user-attachments/assets/fec87d32-350f-4395-a52e-58dfd8e1f151" />
 <br><br>
 Findings: The malware scan returned no findings. However, as a precautionary measure, the affected device was isolated and a support ticket was raised to reimage and rebuild the system. The device remains in an isolated state.
@@ -118,10 +119,10 @@ Findings: The malware scan returned no findings. However, as a precautionary mea
 ## Documentation
 Findings:
 
-- PowerShell script execution
-- `7zip` installation
-- Employee data compressed to `.zip`
-- Archive moved to hidden folder
+- PowerShell script `portscan.ps1` executed by user `br00klyn`
+- Internal port scanning activity detected
+- Excessive failed internal connection attempts from **cyberclaw-vm**
+- Consistent with port scanning/reconnaissance
 
 ## 5. Improvement
 
