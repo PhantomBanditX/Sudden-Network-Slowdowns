@@ -1,6 +1,6 @@
 # Sudden-Network-Slowdowns
 
-## Preparation
+## 1. Preparation
 
 ### Scenario
 
@@ -29,7 +29,7 @@ The server team has noticed a significant network performance degradation on som
 
 ----
 
-## Detection & Analysis
+## 2. Detection & Analysis
 
 ### **Connection Failure Review**
 
@@ -106,7 +106,7 @@ Findings: A PowerShell script named `portscan.ps1` was launched by the **br00kly
 
 ---
 
-## Response
+## 3. Response
 
 This activity was not anticipated or authorized by administrators. The device was therefore immediately isolated, and a malware scan was initiated.
 <br><br>
@@ -116,15 +116,17 @@ Findings: The malware scan returned no findings. However, as a precautionary mea
 
 ---
 
-## Documentation
+## 4. Documentation
 Findings:
 
 - PowerShell script `portscan.ps1` executed by user `br00klyn`
 - Internal port scanning activity detected
 - Excessive failed internal connection attempts from **cyberclaw-vm**
 - Consistent with port scanning/reconnaissance
+  
+---
 
-Improvement
+## 5. Improvement
 
 - Enable PowerShell script logging
 - Block port scan tools via App Control
