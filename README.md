@@ -1,5 +1,9 @@
 # Sudden Network Slowdowns
 
+<p align="center">
+<img width="1000" alt="Image" src="https://github.com/user-attachments/assets/65dcaa38-e0ab-464c-af91-389c1b8a930d" />
+</p>
+
 ## 1. Preparation
 
 ### Scenario
