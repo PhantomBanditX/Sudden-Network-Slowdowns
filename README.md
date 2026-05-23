@@ -1,7 +1,7 @@
 # Sudden Network Slowdowns
 
 <p align="center">
-<img width="1000" alt="Image" src="https://github.com/user-attachments/assets/65dcaa38-e0ab-464c-af91-389c1b8a930d" />
+<img width="886" height="591" alt="Image" src="https://github.com/user-attachments/assets/aa3331ab-eb48-435f-8e41-008809627dc5" />
 </p>
 
 ## 1. Preparation
