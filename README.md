@@ -28,7 +28,7 @@ The server team has noticed a significant network performance degradation on som
 ### Components, Tools, and Technologies Employed
 
 - **Cloud Environment:** Microsoft Azure (VM-Windows target machine)
-- **Threat Detection Platform:** Microsoft Defender for Endpoint (MDE)
+- **Threat Detection Platform:** Microsoft Defender XDR Advanced Hunting with Microsoft Defender for Endpoint (MDE) telemetry
   
 
 ----
