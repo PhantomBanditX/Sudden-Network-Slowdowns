@@ -144,4 +144,4 @@ An investigation into `cyberclaw-vm` identified an abnormal volume of failed int
 
 ---
 ## References
-- [NIST SP 800-61r3](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf)
+- [NIST SP 800-61r3](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r3.pdf)
