@@ -58,7 +58,7 @@ Findings: The query returned multiple failed connection attempts from **cybercla
 
 ### **Network Forensics**
 
-Analyzed failed connection requests from suspected host **10.3.0.50** by querying network logs and ordering results by timestamp to reveal connection patterns.
+Analyzed failed connection requests from suspected host `10.3.0.50` by querying network logs and ordering results by timestamp to reveal connection patterns.
 <br><br>
 ```kql
 let SuspiciousIP = "10.3.0.50";
